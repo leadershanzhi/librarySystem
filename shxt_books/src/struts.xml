@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+  <constant name="struts.devMode" value="true"/>
+  <!-- 配置国际化资源 -->
+  <constant name="struts.custom.i18n.resources" value="message"/>
+  <constant name="struts.ui.theme" value="simple"/>
+  <package name="shxt" extends="struts-default">
+  
+  
+    
+    <interceptors>
+       <interceptor name="LoginCheck" class="com.shxt.interceptor.SessionCheckInterceptor"/>
+       
+       <interceptor-stack name="myStack">
+          <interceptor-ref name="LoginCheck">
+             <param name="sessionAttribute">user_session</param>
+             <param name="reloginResult">login</param>
+          </interceptor-ref>
+          <interceptor-ref name="fileUpload"/>
+		  <interceptor-ref name="defaultStack"/>
+        
+       </interceptor-stack>
+    </interceptors>
+    
+    <default-interceptor-ref name="myStack"/>
+    
+    <global-results>
+       <result name="login" type="redirect">/index.jsp</result>
+    </global-results>
+    
+    <action name="loginAction" class="com.shxt.action.LoginAction">
+       <result>/main.jsp</result>
+       <result name="input">/index.jsp</result>
+       <result name="fail">/index.jsp?id=1</result>
+       <result name="sel">/index.jsp</result>
+    </action>
+     
+    <action name="*BookAction" class="com.shxt.action.BookAction" method="{1}">
+         <result name="input">/error.jsp</result>
+        <result name="{1}">/${toJsp}.jsp</result>
+    </action>
+    
+    <action name="*LendAction" class="com.shxt.action.LendAction" method="{1}">
+        <result name="input">/error.jsp</result>
+        <result name="{1}">/${toJsp}.jsp</result>
+    </action>
+    
+    <action name="*ReaderAction" class="com.shxt.action.ReaderAction" method="{1}">
+        <result name="input">/error.jsp</result>
+        <result name="{1}">/${toJsp}.jsp</result>
+    </action>
+    
+    <action name="*MessageAction" class="com.shxt.action.MessageAction" method="{1}">
+        <result name="input">/error.jsp</result>
+        <result name="{1}">/${toJsp}.jsp</result>
+    </action>
+    
+    <action name="*LiuHuiAction" class="com.shxt.action.LiuHuiAction" method="{1}">
+        <result name="input">/error.jsp</result>
+        <result name="{1}">/${toJsp}.jsp</result>
+    </action>
+    
+    <action name="*DictAction" class="com.shxt.action.DictAction" method="{1}">
+        <result name="input">/error.jsp</result>
+        <result name="{1}">/${toJsp}.jsp</result>
+    </action>
+    </package>
+    
+    <package name="struts2" extends="jfreechart-default">
+        <action name="jfreechartPieAction" class="com.shxt.action.PieAction">
+			<result type="chart">
+				<param name="width">400</param>
+				<param name="height">400</param>
+			</result>
+		</action>
+		<!-- 标注测试方法，保存到数据中去 -->
+		<action name="jfreechartBarAction" class="com.shxt.action.BarAction">
+			<result type="chart">
+				<param name="width">800</param>
+				<param name="height">400</param>
+			</result>
+		</action>
+    
+    </package>
+</struts>
+   

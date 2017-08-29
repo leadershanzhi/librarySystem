@@ -1,0 +1,663 @@
+2012-11-19 10:51:37,687 [main] [org.springframework.web.context.ContextLoader] [INFO] - Root WebApplicationContext: initialization started
+2012-11-19 10:51:37,843 [main] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Refreshing org.springframework.web.context.support.XmlWebApplicationContext@7f3b8a: display name [Root WebApplicationContext]; startup date [Mon Nov 19 10:51:37 CST 2012]; root of context hierarchy
+2012-11-19 10:51:38,124 [main] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from file [D:\apache-tomcat-6.0.16\webapps\student\WEB-INF\classes\applicationContext-common.xml]
+2012-11-19 10:51:38,889 [main] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from file [D:\apache-tomcat-6.0.16\webapps\student\WEB-INF\classes\applicationContext-lyx.xml]
+2012-11-19 10:51:38,936 [main] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@7f3b8a]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a0a36
+2012-11-19 10:51:39,342 [main] [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] [INFO] - Loading properties file from class path resource [jdbc.properties]
+2012-11-19 10:51:39,421 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory] [INFO] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a0a36: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sessionFactory,daoTemplate,transactionManager,jdbcTemplate,commonDao,studentAction,studentService]; root of factory hierarchy
+2012-11-19 10:51:39,889 [main] [org.hibernate.cfg.Environment] [INFO] - Hibernate 3.3.2.GA
+2012-11-19 10:51:39,889 [main] [org.hibernate.cfg.Environment] [INFO] - hibernate.properties not found
+2012-11-19 10:51:39,904 [main] [org.hibernate.cfg.Environment] [INFO] - Bytecode provider name : javassist
+2012-11-19 10:51:39,936 [main] [org.hibernate.cfg.Environment] [INFO] - using JDK 1.4 java.sql.Timestamp handling
+2012-11-19 10:51:40,794 [main] [org.hibernate.cfg.HbmBinder] [INFO] - Mapping class: com.student.model.Student -> student
+2012-11-19 10:51:40,857 [main] [org.springframework.orm.hibernate3.LocalSessionFactoryBean] [INFO] - Building new Hibernate SessionFactory
+2012-11-19 10:51:41,075 [main] [org.hibernate.connection.ConnectionProviderFactory] [INFO] - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2012-11-19 10:51:41,107 [main] [org.hibernate.util.JDBCExceptionReporter] [WARN] - SQL Error: 0, SQLState: null
+2012-11-19 10:51:41,107 [main] [org.hibernate.util.JDBCExceptionReporter] [ERROR] - Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+2012-11-19 10:51:41,107 [main] [org.hibernate.cfg.SettingsFactory] [WARN] - Could not obtain connection to query metadata
+org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1136)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:880)
+	at org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider.getConnection(LocalDataSourceConnectionProvider.java:82)
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:111)
+	at org.hibernate.cfg.Configuration.buildSettingsInternal(Configuration.java:2119)
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2115)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1339)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:814)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:732)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:211)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1369)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:473)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:423)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:380)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:255)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:199)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:45)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:3843)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4350)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:791)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:771)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:525)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:924)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:887)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:492)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1147)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:311)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:719)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:443)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:516)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:710)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:578)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:413)
+Caused by: java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1360)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1206)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1130)
+	... 50 more
+2012-11-19 10:51:41,263 [main] [org.hibernate.dialect.Dialect] [INFO] - Using dialect: org.hibernate.dialect.MySQLDialect
+2012-11-19 10:51:41,278 [main] [org.hibernate.transaction.TransactionFactoryFactory] [INFO] - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2012-11-19 10:51:41,278 [main] [org.hibernate.transaction.TransactionManagerLookupFactory] [INFO] - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2012-11-19 10:51:41,278 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Automatic flush during beforeCompletion(): disabled
+2012-11-19 10:51:41,278 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Automatic session close at end of transaction: disabled
+2012-11-19 10:51:41,278 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Scrollable result sets: disabled
+2012-11-19 10:51:41,278 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JDBC3 getGeneratedKeys(): disabled
+2012-11-19 10:51:41,278 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Connection release mode: auto
+2012-11-19 10:51:41,278 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Maximum outer join fetch depth: 2
+2012-11-19 10:51:41,278 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Default batch fetch size: 1
+2012-11-19 10:51:41,278 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Generate SQL with comments: disabled
+2012-11-19 10:51:41,278 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Order SQL updates by primary key: disabled
+2012-11-19 10:51:41,278 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Order SQL inserts for batching: disabled
+2012-11-19 10:51:41,278 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2012-11-19 10:51:41,294 [main] [org.hibernate.hql.ast.ASTQueryTranslatorFactory] [INFO] - Using ASTQueryTranslatorFactory
+2012-11-19 10:51:41,294 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query language substitutions: {}
+2012-11-19 10:51:41,294 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JPA-QL strict compliance: disabled
+2012-11-19 10:51:41,294 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Second-level cache: enabled
+2012-11-19 10:51:41,294 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query cache: enabled
+2012-11-19 10:51:41,309 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Cache region factory : org.hibernate.cache.impl.bridge.RegionFactoryCacheProviderBridge
+2012-11-19 10:51:41,309 [main] [org.hibernate.cache.impl.bridge.RegionFactoryCacheProviderBridge] [INFO] - Cache provider: org.hibernate.cache.EhCacheProvider
+2012-11-19 10:51:41,341 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Optimize cache for minimal puts: disabled
+2012-11-19 10:51:41,341 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Structured second-level cache entries: disabled
+2012-11-19 10:51:41,341 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query cache factory: org.hibernate.cache.StandardQueryCacheFactory
+2012-11-19 10:51:41,372 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Statistics: disabled
+2012-11-19 10:51:41,372 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Deleted entity synthetic identifier rollback: disabled
+2012-11-19 10:51:41,372 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Default entity-mode: pojo
+2012-11-19 10:51:41,387 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Named query checking : enabled
+2012-11-19 10:51:41,575 [main] [org.hibernate.impl.SessionFactoryImpl] [INFO] - building session factory
+2012-11-19 10:51:41,621 [main] [net.sf.ehcache.config.ConfigurationFactory] [WARN] - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/D:/apache-tomcat-6.0.16/webapps/student/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+2012-11-19 10:51:42,963 [main] [org.hibernate.impl.SessionFactoryObjectFactory] [INFO] - Not binding factory to JNDI, no JNDI name configured
+2012-11-19 10:51:43,011 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - Running hbm2ddl schema update
+2012-11-19 10:51:43,011 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - fetching database metadata
+2012-11-19 10:51:43,026 [main] [org.hibernate.util.JDBCExceptionReporter] [WARN] - SQL Error: 0, SQLState: null
+2012-11-19 10:51:43,026 [main] [org.hibernate.util.JDBCExceptionReporter] [ERROR] - Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+2012-11-19 10:51:43,026 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - could not get database metadata
+org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1136)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:880)
+	at org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider.getConnection(LocalDataSourceConnectionProvider.java:82)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:168)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:356)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1341)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:814)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:732)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:211)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1369)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:473)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:423)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:380)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:255)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:199)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:45)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:3843)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4350)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:791)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:771)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:525)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:924)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:887)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:492)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1147)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:311)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:719)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:443)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:516)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:710)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:578)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:413)
+Caused by: java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1360)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1206)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1130)
+	... 50 more
+2012-11-19 10:51:43,026 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - could not complete schema update
+org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'oracle.jdbc.driver.OracleDriver'
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1136)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:880)
+	at org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider.getConnection(LocalDataSourceConnectionProvider.java:82)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:168)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:356)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1341)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:814)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:732)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:211)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1369)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:473)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:423)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:380)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:255)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:199)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:45)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:3843)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4350)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:791)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:771)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:525)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:924)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:887)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:492)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1147)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:311)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:719)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:443)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:516)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:710)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:578)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:413)
+Caused by: java.lang.ClassNotFoundException: oracle.jdbc.driver.OracleDriver
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1360)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1206)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1130)
+	... 50 more
+2012-11-19 10:51:43,042 [main] [org.hibernate.cache.UpdateTimestampsCache] [INFO] - starting update timestamps cache at region: org.hibernate.cache.UpdateTimestampsCache
+2012-11-19 10:51:43,058 [main] [org.hibernate.cache.EhCacheProvider] [WARN] - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+2012-11-19 10:51:43,182 [main] [org.hibernate.cache.StandardQueryCache] [INFO] - starting query cache at region: org.hibernate.cache.StandardQueryCache
+2012-11-19 10:51:43,182 [main] [org.hibernate.cache.EhCacheProvider] [WARN] - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+2012-11-19 10:51:43,416 [main] [org.springframework.orm.hibernate3.HibernateTransactionManager] [INFO] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@2e879] of Hibernate SessionFactory for HibernateTransactionManager
+2012-11-19 10:51:43,697 [main] [org.springframework.web.context.ContextLoader] [INFO] - Root WebApplicationContext: initialization completed in 5994 ms
+2012-11-19 10:51:44,321 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts-default.xml]
+2012-11-19 10:51:44,759 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts-plugin.xml]
+2012-11-19 10:51:44,806 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts.xml]
+2012-11-19 10:51:45,289 [main] [org.apache.struts2.spring.StrutsSpringObjectFactory] [INFO] - Initializing Struts-Spring integration...
+2012-11-19 10:51:45,289 [main] [com.opensymphony.xwork2.spring.SpringObjectFactory] [INFO] - Setting autowire strategy to name
+2012-11-19 10:51:45,289 [main] [org.apache.struts2.spring.StrutsSpringObjectFactory] [INFO] - ... initialized Struts-Spring integration successfully
+2012-11-19 10:53:31,903 [main] [org.springframework.web.context.ContextLoader] [INFO] - Root WebApplicationContext: initialization started
+2012-11-19 10:53:32,074 [main] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Refreshing org.springframework.web.context.support.XmlWebApplicationContext@9db992: display name [Root WebApplicationContext]; startup date [Mon Nov 19 10:53:32 CST 2012]; root of context hierarchy
+2012-11-19 10:53:32,403 [main] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from file [D:\apache-tomcat-6.0.16\webapps\student\WEB-INF\classes\applicationContext-common.xml]
+2012-11-19 10:53:32,933 [main] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from file [D:\apache-tomcat-6.0.16\webapps\student\WEB-INF\classes\applicationContext-lyx.xml]
+2012-11-19 10:53:33,011 [main] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@9db992]: org.springframework.beans.factory.support.DefaultListableBeanFactory@bebb88
+2012-11-19 10:53:33,511 [main] [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] [INFO] - Loading properties file from class path resource [jdbc.properties]
+2012-11-19 10:53:33,558 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory] [INFO] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@bebb88: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sessionFactory,daoTemplate,transactionManager,jdbcTemplate,commonDao,studentAction,studentService]; root of factory hierarchy
+2012-11-19 10:53:33,964 [main] [org.hibernate.cfg.Environment] [INFO] - Hibernate 3.3.2.GA
+2012-11-19 10:53:33,980 [main] [org.hibernate.cfg.Environment] [INFO] - hibernate.properties not found
+2012-11-19 10:53:33,995 [main] [org.hibernate.cfg.Environment] [INFO] - Bytecode provider name : javassist
+2012-11-19 10:53:34,026 [main] [org.hibernate.cfg.Environment] [INFO] - using JDK 1.4 java.sql.Timestamp handling
+2012-11-19 10:53:35,025 [main] [org.hibernate.cfg.HbmBinder] [INFO] - Mapping class: com.student.model.Student -> student
+2012-11-19 10:53:35,088 [main] [org.springframework.orm.hibernate3.LocalSessionFactoryBean] [INFO] - Building new Hibernate SessionFactory
+2012-11-19 10:53:35,322 [main] [org.hibernate.connection.ConnectionProviderFactory] [INFO] - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2012-11-19 10:53:56,850 [main] [org.hibernate.util.JDBCExceptionReporter] [WARN] - SQL Error: 0, SQLState: null
+2012-11-19 10:53:56,866 [main] [org.hibernate.util.JDBCExceptionReporter] [ERROR] - Cannot create PoolableConnectionFactory (Io 异常: The Network Adapter could not establish the connection)
+2012-11-19 10:53:56,866 [main] [org.hibernate.cfg.SettingsFactory] [WARN] - Could not obtain connection to query metadata
+org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Io 异常: The Network Adapter could not establish the connection)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1225)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:880)
+	at org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider.getConnection(LocalDataSourceConnectionProvider.java:82)
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:111)
+	at org.hibernate.cfg.Configuration.buildSettingsInternal(Configuration.java:2119)
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2115)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1339)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:814)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:732)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:211)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1369)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:473)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:423)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:380)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:255)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:199)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:45)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:3843)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4350)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:791)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:771)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:525)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:924)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:887)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:492)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1147)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:311)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:719)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:443)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:516)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:710)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:578)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:413)
+Caused by: java.sql.SQLException: Io 异常: The Network Adapter could not establish the connection
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:146)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:255)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:387)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:439)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:294)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1247)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1221)
+	... 50 more
+2012-11-19 10:53:57,070 [main] [org.hibernate.dialect.Dialect] [INFO] - Using dialect: org.hibernate.dialect.MySQLDialect
+2012-11-19 10:53:57,085 [main] [org.hibernate.transaction.TransactionFactoryFactory] [INFO] - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2012-11-19 10:53:57,085 [main] [org.hibernate.transaction.TransactionManagerLookupFactory] [INFO] - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2012-11-19 10:53:57,085 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Automatic flush during beforeCompletion(): disabled
+2012-11-19 10:53:57,085 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Automatic session close at end of transaction: disabled
+2012-11-19 10:53:57,101 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Scrollable result sets: disabled
+2012-11-19 10:53:57,101 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JDBC3 getGeneratedKeys(): disabled
+2012-11-19 10:53:57,101 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Connection release mode: auto
+2012-11-19 10:53:57,101 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Maximum outer join fetch depth: 2
+2012-11-19 10:53:57,101 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Default batch fetch size: 1
+2012-11-19 10:53:57,101 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Generate SQL with comments: disabled
+2012-11-19 10:53:57,101 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Order SQL updates by primary key: disabled
+2012-11-19 10:53:57,101 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Order SQL inserts for batching: disabled
+2012-11-19 10:53:57,101 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2012-11-19 10:53:57,116 [main] [org.hibernate.hql.ast.ASTQueryTranslatorFactory] [INFO] - Using ASTQueryTranslatorFactory
+2012-11-19 10:53:57,116 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query language substitutions: {}
+2012-11-19 10:53:57,116 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JPA-QL strict compliance: disabled
+2012-11-19 10:53:57,116 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Second-level cache: enabled
+2012-11-19 10:53:57,116 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query cache: enabled
+2012-11-19 10:53:57,148 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Cache region factory : org.hibernate.cache.impl.bridge.RegionFactoryCacheProviderBridge
+2012-11-19 10:53:57,148 [main] [org.hibernate.cache.impl.bridge.RegionFactoryCacheProviderBridge] [INFO] - Cache provider: org.hibernate.cache.EhCacheProvider
+2012-11-19 10:53:57,163 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Optimize cache for minimal puts: disabled
+2012-11-19 10:53:57,163 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Structured second-level cache entries: disabled
+2012-11-19 10:53:57,163 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query cache factory: org.hibernate.cache.StandardQueryCacheFactory
+2012-11-19 10:53:57,226 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Statistics: disabled
+2012-11-19 10:53:57,226 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Deleted entity synthetic identifier rollback: disabled
+2012-11-19 10:53:57,226 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Default entity-mode: pojo
+2012-11-19 10:53:57,226 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Named query checking : enabled
+2012-11-19 10:53:57,382 [main] [org.hibernate.impl.SessionFactoryImpl] [INFO] - building session factory
+2012-11-19 10:53:57,413 [main] [net.sf.ehcache.config.ConfigurationFactory] [WARN] - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/D:/apache-tomcat-6.0.16/webapps/student/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+2012-11-19 10:53:58,380 [main] [org.hibernate.impl.SessionFactoryObjectFactory] [INFO] - Not binding factory to JNDI, no JNDI name configured
+2012-11-19 10:53:58,428 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - Running hbm2ddl schema update
+2012-11-19 10:53:58,428 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - fetching database metadata
+2012-11-19 10:54:19,472 [main] [org.hibernate.util.JDBCExceptionReporter] [WARN] - SQL Error: 0, SQLState: null
+2012-11-19 10:54:19,472 [main] [org.hibernate.util.JDBCExceptionReporter] [ERROR] - Cannot create PoolableConnectionFactory (Io 异常: The Network Adapter could not establish the connection)
+2012-11-19 10:54:19,472 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - could not get database metadata
+org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Io 异常: The Network Adapter could not establish the connection)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1225)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:880)
+	at org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider.getConnection(LocalDataSourceConnectionProvider.java:82)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:168)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:356)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1341)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:814)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:732)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:211)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1369)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:473)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:423)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:380)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:255)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:199)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:45)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:3843)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4350)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:791)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:771)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:525)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:924)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:887)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:492)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1147)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:311)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:719)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:443)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:516)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:710)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:578)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:413)
+Caused by: java.sql.SQLException: Io 异常: The Network Adapter could not establish the connection
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:146)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:255)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:387)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:439)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:294)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1247)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1221)
+	... 50 more
+2012-11-19 10:54:19,488 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - could not complete schema update
+org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Io 异常: The Network Adapter could not establish the connection)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1225)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:880)
+	at org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider.getConnection(LocalDataSourceConnectionProvider.java:82)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:168)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:356)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1341)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:814)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:732)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:211)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1369)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:473)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:423)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:380)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:255)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:199)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:45)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:3843)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4350)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:791)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:771)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:525)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:924)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:887)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:492)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1147)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:311)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:719)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:443)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:516)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:710)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:578)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:413)
+Caused by: java.sql.SQLException: Io 异常: The Network Adapter could not establish the connection
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:146)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:255)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:387)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:439)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:294)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1247)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1221)
+	... 50 more
+2012-11-19 10:54:19,488 [main] [org.hibernate.cache.UpdateTimestampsCache] [INFO] - starting update timestamps cache at region: org.hibernate.cache.UpdateTimestampsCache
+2012-11-19 10:54:19,504 [main] [org.hibernate.cache.EhCacheProvider] [WARN] - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+2012-11-19 10:54:19,598 [main] [org.hibernate.cache.StandardQueryCache] [INFO] - starting query cache at region: org.hibernate.cache.StandardQueryCache
+2012-11-19 10:54:19,614 [main] [org.hibernate.cache.EhCacheProvider] [WARN] - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+2012-11-19 10:54:19,801 [main] [org.springframework.orm.hibernate3.HibernateTransactionManager] [INFO] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@183ee9a] of Hibernate SessionFactory for HibernateTransactionManager
+2012-11-19 10:54:20,050 [main] [org.springframework.web.context.ContextLoader] [INFO] - Root WebApplicationContext: initialization completed in 48132 ms
+2012-11-19 10:54:20,659 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts-default.xml]
+2012-11-19 10:54:21,143 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts-plugin.xml]
+2012-11-19 10:54:21,175 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts.xml]
+2012-11-19 10:54:21,455 [main] [org.apache.struts2.spring.StrutsSpringObjectFactory] [INFO] - Initializing Struts-Spring integration...
+2012-11-19 10:54:21,455 [main] [com.opensymphony.xwork2.spring.SpringObjectFactory] [INFO] - Setting autowire strategy to name
+2012-11-19 10:54:21,455 [main] [org.apache.struts2.spring.StrutsSpringObjectFactory] [INFO] - ... initialized Struts-Spring integration successfully
+2012-11-19 10:56:00,256 [main] [org.springframework.web.context.ContextLoader] [INFO] - Root WebApplicationContext: initialization started
+2012-11-19 10:56:00,476 [main] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Refreshing org.springframework.web.context.support.XmlWebApplicationContext@1dae160: display name [Root WebApplicationContext]; startup date [Mon Nov 19 10:56:00 CST 2012]; root of context hierarchy
+2012-11-19 10:56:00,897 [main] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from file [D:\apache-tomcat-6.0.16\webapps\student\WEB-INF\classes\applicationContext-common.xml]
+2012-11-19 10:56:01,256 [main] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from file [D:\apache-tomcat-6.0.16\webapps\student\WEB-INF\classes\applicationContext-lyx.xml]
+2012-11-19 10:56:01,318 [main] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@1dae160]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1a0d346
+2012-11-19 10:56:01,631 [main] [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] [INFO] - Loading properties file from class path resource [jdbc.properties]
+2012-11-19 10:56:01,678 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory] [INFO] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1a0d346: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sessionFactory,daoTemplate,transactionManager,jdbcTemplate,commonDao,studentAction,studentService]; root of factory hierarchy
+2012-11-19 10:56:01,896 [main] [org.hibernate.cfg.Environment] [INFO] - Hibernate 3.3.2.GA
+2012-11-19 10:56:01,896 [main] [org.hibernate.cfg.Environment] [INFO] - hibernate.properties not found
+2012-11-19 10:56:01,912 [main] [org.hibernate.cfg.Environment] [INFO] - Bytecode provider name : javassist
+2012-11-19 10:56:01,912 [main] [org.hibernate.cfg.Environment] [INFO] - using JDK 1.4 java.sql.Timestamp handling
+2012-11-19 10:56:02,411 [main] [org.hibernate.cfg.HbmBinder] [INFO] - Mapping class: com.student.model.Student -> student
+2012-11-19 10:56:02,458 [main] [org.springframework.orm.hibernate3.LocalSessionFactoryBean] [INFO] - Building new Hibernate SessionFactory
+2012-11-19 10:56:02,646 [main] [org.hibernate.connection.ConnectionProviderFactory] [INFO] - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2012-11-19 10:56:03,598 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - RDBMS: Oracle, version: Oracle Database 10g Enterprise Edition Release 10.2.0.3.0 - Production
+With the Partitioning, OLAP and Data Mining options
+2012-11-19 10:56:03,598 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JDBC driver: Oracle JDBC driver, version: 10.2.0.3.0
+2012-11-19 10:56:03,771 [main] [org.hibernate.dialect.Dialect] [INFO] - Using dialect: org.hibernate.dialect.MySQLDialect
+2012-11-19 10:56:03,803 [main] [org.hibernate.transaction.TransactionFactoryFactory] [INFO] - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2012-11-19 10:56:03,803 [main] [org.hibernate.transaction.TransactionManagerLookupFactory] [INFO] - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2012-11-19 10:56:03,803 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Automatic flush during beforeCompletion(): disabled
+2012-11-19 10:56:03,803 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Automatic session close at end of transaction: disabled
+2012-11-19 10:56:03,803 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JDBC batch size: 15
+2012-11-19 10:56:03,803 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JDBC batch updates for versioned data: disabled
+2012-11-19 10:56:03,803 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Scrollable result sets: enabled
+2012-11-19 10:56:03,803 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JDBC3 getGeneratedKeys(): enabled
+2012-11-19 10:56:03,803 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Connection release mode: auto
+2012-11-19 10:56:03,818 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Maximum outer join fetch depth: 2
+2012-11-19 10:56:03,818 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Default batch fetch size: 1
+2012-11-19 10:56:03,818 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Generate SQL with comments: disabled
+2012-11-19 10:56:03,818 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Order SQL updates by primary key: disabled
+2012-11-19 10:56:03,818 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Order SQL inserts for batching: disabled
+2012-11-19 10:56:03,818 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2012-11-19 10:56:03,834 [main] [org.hibernate.hql.ast.ASTQueryTranslatorFactory] [INFO] - Using ASTQueryTranslatorFactory
+2012-11-19 10:56:03,834 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query language substitutions: {}
+2012-11-19 10:56:03,834 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JPA-QL strict compliance: disabled
+2012-11-19 10:56:03,834 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Second-level cache: enabled
+2012-11-19 10:56:03,834 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query cache: enabled
+2012-11-19 10:56:03,865 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Cache region factory : org.hibernate.cache.impl.bridge.RegionFactoryCacheProviderBridge
+2012-11-19 10:56:03,881 [main] [org.hibernate.cache.impl.bridge.RegionFactoryCacheProviderBridge] [INFO] - Cache provider: org.hibernate.cache.EhCacheProvider
+2012-11-19 10:56:03,896 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Optimize cache for minimal puts: disabled
+2012-11-19 10:56:03,896 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Structured second-level cache entries: disabled
+2012-11-19 10:56:03,896 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query cache factory: org.hibernate.cache.StandardQueryCacheFactory
+2012-11-19 10:56:03,974 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Statistics: disabled
+2012-11-19 10:56:03,974 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Deleted entity synthetic identifier rollback: disabled
+2012-11-19 10:56:03,974 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Default entity-mode: pojo
+2012-11-19 10:56:03,974 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Named query checking : enabled
+2012-11-19 10:56:04,224 [main] [org.hibernate.impl.SessionFactoryImpl] [INFO] - building session factory
+2012-11-19 10:56:04,271 [main] [net.sf.ehcache.config.ConfigurationFactory] [WARN] - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/D:/apache-tomcat-6.0.16/webapps/student/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+2012-11-19 10:56:05,316 [main] [org.hibernate.impl.SessionFactoryObjectFactory] [INFO] - Not binding factory to JNDI, no JNDI name configured
+2012-11-19 10:56:05,349 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - Running hbm2ddl schema update
+2012-11-19 10:56:05,349 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - fetching database metadata
+2012-11-19 10:56:05,552 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - updating schema
+2012-11-19 10:56:06,535 [main] [org.hibernate.tool.hbm2ddl.TableMetadata] [INFO] - table found: SHXT.STUDENT
+2012-11-19 10:56:06,535 [main] [org.hibernate.tool.hbm2ddl.TableMetadata] [INFO] - columns: [sid, sage, sdept, ssex, saddress, sname]
+2012-11-19 10:56:06,535 [main] [org.hibernate.tool.hbm2ddl.TableMetadata] [INFO] - foreign keys: []
+2012-11-19 10:56:06,535 [main] [org.hibernate.tool.hbm2ddl.TableMetadata] [INFO] - indexes: [sys_c007112]
+2012-11-19 10:56:06,582 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - Unsuccessful: alter table student add column student_id integer
+2012-11-19 10:56:06,582 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - ORA-00904: : 标识符无效
+
+2012-11-19 10:56:06,614 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - Unsuccessful: alter table student add column student_name varchar(255)
+2012-11-19 10:56:06,614 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - ORA-00904: : 标识符无效
+
+2012-11-19 10:56:06,614 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - Unsuccessful: alter table student add column student_pwd varchar(255)
+2012-11-19 10:56:06,614 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - ORA-00904: : 标识符无效
+
+2012-11-19 10:56:06,614 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - Unsuccessful: alter table student add column student_sex varchar(255)
+2012-11-19 10:56:06,614 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - ORA-00904: : 标识符无效
+
+2012-11-19 10:56:06,614 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - Unsuccessful: alter table student add column student_birthday varchar(255)
+2012-11-19 10:56:06,614 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [ERROR] - ORA-00904: : 标识符无效
+
+2012-11-19 10:56:06,614 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - schema update complete
+2012-11-19 10:56:06,629 [main] [org.hibernate.cache.UpdateTimestampsCache] [INFO] - starting update timestamps cache at region: org.hibernate.cache.UpdateTimestampsCache
+2012-11-19 10:56:06,645 [main] [org.hibernate.cache.EhCacheProvider] [WARN] - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+2012-11-19 10:56:06,723 [main] [org.hibernate.cache.StandardQueryCache] [INFO] - starting query cache at region: org.hibernate.cache.StandardQueryCache
+2012-11-19 10:56:06,738 [main] [org.hibernate.cache.EhCacheProvider] [WARN] - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+2012-11-19 10:56:06,957 [main] [org.springframework.orm.hibernate3.HibernateTransactionManager] [INFO] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@d4a1d3] of Hibernate SessionFactory for HibernateTransactionManager
+2012-11-19 10:56:07,175 [main] [org.springframework.web.context.ContextLoader] [INFO] - Root WebApplicationContext: initialization completed in 6919 ms
+2012-11-19 10:56:07,503 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts-default.xml]
+2012-11-19 10:56:07,893 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts-plugin.xml]
+2012-11-19 10:56:07,926 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts.xml]
+2012-11-19 10:56:08,207 [main] [org.apache.struts2.spring.StrutsSpringObjectFactory] [INFO] - Initializing Struts-Spring integration...
+2012-11-19 10:56:08,207 [main] [com.opensymphony.xwork2.spring.SpringObjectFactory] [INFO] - Setting autowire strategy to name
+2012-11-19 10:56:08,207 [main] [org.apache.struts2.spring.StrutsSpringObjectFactory] [INFO] - ... initialized Struts-Spring integration successfully
+2012-11-19 11:06:08,858 [main] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Closing org.springframework.web.context.support.XmlWebApplicationContext@1dae160: display name [Root WebApplicationContext]; startup date [Mon Nov 19 10:56:00 CST 2012]; root of context hierarchy
+2012-11-19 11:06:08,858 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory] [INFO] - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1a0d346: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sessionFactory,daoTemplate,transactionManager,jdbcTemplate,commonDao,studentAction,studentService]; root of factory hierarchy
+2012-11-19 11:06:08,858 [main] [org.springframework.orm.hibernate3.LocalSessionFactoryBean] [INFO] - Closing Hibernate SessionFactory
+2012-11-19 11:06:08,858 [main] [org.hibernate.impl.SessionFactoryImpl] [INFO] - closing
+2012-11-19 11:06:21,592 [main] [org.springframework.web.context.ContextLoader] [INFO] - Root WebApplicationContext: initialization started
+2012-11-19 11:06:21,827 [main] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Refreshing org.springframework.web.context.support.XmlWebApplicationContext@1e09eab: display name [Root WebApplicationContext]; startup date [Mon Nov 19 11:06:21 CST 2012]; root of context hierarchy
+2012-11-19 11:06:22,264 [main] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from file [D:\apache-tomcat-6.0.16\webapps\student\WEB-INF\classes\applicationContext-common.xml]
+2012-11-19 11:06:22,841 [main] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from file [D:\apache-tomcat-6.0.16\webapps\student\WEB-INF\classes\applicationContext-lyx.xml]
+2012-11-19 11:06:22,889 [main] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@1e09eab]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1a4eb56
+2012-11-19 11:06:23,217 [main] [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer] [INFO] - Loading properties file from class path resource [jdbc.properties]
+2012-11-19 11:06:23,310 [main] [org.springframework.beans.factory.support.DefaultListableBeanFactory] [INFO] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1a4eb56: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sessionFactory,daoTemplate,transactionManager,jdbcTemplate,commonDao,studentAction,studentService]; root of factory hierarchy
+2012-11-19 11:06:23,747 [main] [org.hibernate.cfg.Environment] [INFO] - Hibernate 3.3.2.GA
+2012-11-19 11:06:23,763 [main] [org.hibernate.cfg.Environment] [INFO] - hibernate.properties not found
+2012-11-19 11:06:23,778 [main] [org.hibernate.cfg.Environment] [INFO] - Bytecode provider name : javassist
+2012-11-19 11:06:23,810 [main] [org.hibernate.cfg.Environment] [INFO] - using JDK 1.4 java.sql.Timestamp handling
+2012-11-19 11:06:24,714 [main] [org.hibernate.cfg.HbmBinder] [INFO] - Mapping class: com.student.model.Student -> student
+2012-11-19 11:06:24,778 [main] [org.springframework.orm.hibernate3.LocalSessionFactoryBean] [INFO] - Building new Hibernate SessionFactory
+2012-11-19 11:06:24,965 [main] [org.hibernate.connection.ConnectionProviderFactory] [INFO] - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2012-11-19 11:06:25,480 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - RDBMS: MySQL, version: 5.5.13
+2012-11-19 11:06:25,480 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.5 ( $Date: 2007-03-01 00:01:06 +0100 (Thu, 01 Mar 2007) $, $Revision: 6329 $ )
+2012-11-19 11:06:25,558 [main] [org.hibernate.dialect.Dialect] [INFO] - Using dialect: org.hibernate.dialect.MySQLDialect
+2012-11-19 11:06:25,573 [main] [org.hibernate.transaction.TransactionFactoryFactory] [INFO] - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2012-11-19 11:06:25,573 [main] [org.hibernate.transaction.TransactionManagerLookupFactory] [INFO] - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Automatic flush during beforeCompletion(): disabled
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Automatic session close at end of transaction: disabled
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JDBC batch size: 15
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JDBC batch updates for versioned data: disabled
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Scrollable result sets: enabled
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JDBC3 getGeneratedKeys(): enabled
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Connection release mode: auto
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Maximum outer join fetch depth: 2
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Default batch fetch size: 1
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Generate SQL with comments: disabled
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Order SQL updates by primary key: disabled
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Order SQL inserts for batching: disabled
+2012-11-19 11:06:25,573 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2012-11-19 11:06:25,589 [main] [org.hibernate.hql.ast.ASTQueryTranslatorFactory] [INFO] - Using ASTQueryTranslatorFactory
+2012-11-19 11:06:25,589 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query language substitutions: {}
+2012-11-19 11:06:25,589 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - JPA-QL strict compliance: disabled
+2012-11-19 11:06:25,589 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Second-level cache: enabled
+2012-11-19 11:06:25,589 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query cache: enabled
+2012-11-19 11:06:25,605 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Cache region factory : org.hibernate.cache.impl.bridge.RegionFactoryCacheProviderBridge
+2012-11-19 11:06:25,605 [main] [org.hibernate.cache.impl.bridge.RegionFactoryCacheProviderBridge] [INFO] - Cache provider: org.hibernate.cache.EhCacheProvider
+2012-11-19 11:06:25,605 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Optimize cache for minimal puts: disabled
+2012-11-19 11:06:25,620 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Structured second-level cache entries: disabled
+2012-11-19 11:06:25,620 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Query cache factory: org.hibernate.cache.StandardQueryCacheFactory
+2012-11-19 11:06:25,636 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Statistics: disabled
+2012-11-19 11:06:25,636 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Deleted entity synthetic identifier rollback: disabled
+2012-11-19 11:06:25,636 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Default entity-mode: pojo
+2012-11-19 11:06:25,636 [main] [org.hibernate.cfg.SettingsFactory] [INFO] - Named query checking : enabled
+2012-11-19 11:06:25,776 [main] [org.hibernate.impl.SessionFactoryImpl] [INFO] - building session factory
+2012-11-19 11:06:25,807 [main] [net.sf.ehcache.config.ConfigurationFactory] [WARN] - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/D:/apache-tomcat-6.0.16/webapps/student/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+2012-11-19 11:06:26,582 [main] [org.hibernate.impl.SessionFactoryObjectFactory] [INFO] - Not binding factory to JNDI, no JNDI name configured
+2012-11-19 11:06:26,598 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - Running hbm2ddl schema update
+2012-11-19 11:06:26,598 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - fetching database metadata
+2012-11-19 11:06:26,613 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - updating schema
+2012-11-19 11:06:26,613 [main] [org.hibernate.tool.hbm2ddl.DatabaseMetadata] [INFO] - table not found: student
+2012-11-19 11:06:26,613 [main] [org.hibernate.tool.hbm2ddl.DatabaseMetadata] [INFO] - table not found: student
+2012-11-19 11:06:26,878 [main] [org.hibernate.tool.hbm2ddl.SchemaUpdate] [INFO] - schema update complete
+2012-11-19 11:06:26,894 [main] [org.hibernate.cache.UpdateTimestampsCache] [INFO] - starting update timestamps cache at region: org.hibernate.cache.UpdateTimestampsCache
+2012-11-19 11:06:26,894 [main] [org.hibernate.cache.EhCacheProvider] [WARN] - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+2012-11-19 11:06:26,942 [main] [org.hibernate.cache.StandardQueryCache] [INFO] - starting query cache at region: org.hibernate.cache.StandardQueryCache
+2012-11-19 11:06:26,942 [main] [org.hibernate.cache.EhCacheProvider] [WARN] - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+2012-11-19 11:06:27,129 [main] [org.springframework.orm.hibernate3.HibernateTransactionManager] [INFO] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1537060] of Hibernate SessionFactory for HibernateTransactionManager
+2012-11-19 11:06:27,363 [main] [org.springframework.web.context.ContextLoader] [INFO] - Root WebApplicationContext: initialization completed in 5771 ms
+2012-11-19 11:06:27,691 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts-default.xml]
+2012-11-19 11:06:28,018 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts-plugin.xml]
+2012-11-19 11:06:28,034 [main] [com.opensymphony.xwork2.config.providers.XmlConfigurationProvider] [INFO] - Parsing configuration file [struts.xml]
+2012-11-19 11:06:28,300 [main] [org.apache.struts2.spring.StrutsSpringObjectFactory] [INFO] - Initializing Struts-Spring integration...
+2012-11-19 11:06:28,300 [main] [com.opensymphony.xwork2.spring.SpringObjectFactory] [INFO] - Setting autowire strategy to name
+2012-11-19 11:06:28,300 [main] [org.apache.struts2.spring.StrutsSpringObjectFactory] [INFO] - ... initialized Struts-Spring integration successfully

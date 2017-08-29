@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.shxt.bo" >
+   <class name="LiuYan" table="B_LIUYAN">
+     <id name="lyid" column="B_LYID" type="integer">
+       <generator class="sequence">
+          <param name="sequence">seq_lyid</param>
+       </generator>
+     </id>
+     <property name="lytime" column="LY_LYTIME" type="string"/>
+     <property name="content" column="LY_CONTENT" type="string"/>
+     <many-to-one name="re" column="LY_RE" cascade="save-update" class="Readers" lazy="false"/>
+     <set name="hfSet" cascade="save-update" lazy="false" inverse="true">
+         <key column="lyid"/>
+         <one-to-many class="HuiFu"/>
+     </set>
+   
+   </class>
+</hibernate-mapping>

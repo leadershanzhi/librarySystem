@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.shxt.bo" >
+   <class name="Lends" table="B_Lends">
+     <id name="lid" column="L_lid" type="integer">
+       <generator class="sequence">
+          <param name="sequence">seq_lid</param>
+       </generator>
+     </id>
+     <property name="time1" column="L_TIME1" type="string"/>
+     <property name="time2" column="L_TIME2" type="string"/>
+     <property name="owemoney" column="L_OWEMONEY" type="string"/>
+     <property name="tag" column="L_TAG" type="string"/>
+   
+     <many-to-one name="readers" class="Readers" column="rid" lazy="false"/>
+     <many-to-one name="books" class="Books" column="bid" lazy="false"/>
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.shxt.bo" >
+   <class name="Readers" table="B_Readers">
+     <id name="rid" column="R_ID" type="integer">
+       <generator class="sequence">
+          <param name="sequence">seq_rid</param>
+       </generator>
+     </id>
+     <property name="lname" column="R_LNAME" type="string"/>
+     <property name="rpw" column="R_RPW" type="string"/>
+     <property name="sex" column="R_SEX" type="string"/>
+     <property name="name" column="R_NAME" type="string"/>
+     <property name="birth" column="R_BIRTH" type="string"/>
+     <property name="img" column="R_IMG" type="string"/>
+     <property name="sdept" column="R_SDEPT" type="string"/>
+     <property name="mail" column="R_MAIL" type="string"/>
+     <property name="phone" column="R_PHONE" type="string"/>
+     <property name="identity" column="R_IDENTITY" type="string"/>
+    
+   </class>
+</hibernate-mapping>

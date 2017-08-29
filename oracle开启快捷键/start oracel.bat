@@ -1,0 +1,2 @@
+net start oracleserviceorcl
+net start OracleOraDb10g_home1TNSListener

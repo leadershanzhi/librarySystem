@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.shxt.bo" >
+   <class name="Dict" table="B_Dict">
+     <id name="dicid" column="D_DICID" type="integer">
+       <generator class="sequence">
+          <param name="sequence">seq_dicid</param>
+       </generator>
+     </id>
+     <property name="dicname" column="D_DICNAME" type="string"/>
+     <set name="dicSet" cascade="save-update" lazy="false" inverse="true">
+        <key column="D_FATHER"/>
+        <one-to-many class="Dict"/>
+     </set>
+     <many-to-one name="dict" class="Dict" cascade="save-update" lazy="false" column="D_FATHER"/>
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.shxt.bo" >
+   <class name="HuiFu" table="B_HUIFU">
+     <id name="hfid" column="HF_ID" type="integer">
+       <generator class="sequence">
+          <param name="sequence">seq_hfid</param>
+       </generator>
+     </id>
+    
+     <property name="content" column="HF_CONTENT" type="string"/>
+     <property name="hftime" column="HF_TIME" type="string"/>
+     <many-to-one name="ly" class="LiuYan" column="lyid"  cascade="save-update" />
+   
+   </class>
+</hibernate-mapping>
